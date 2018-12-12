@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Positive Grade Home Inspections LLC</title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+    <script type="text/javascript" src="../client.js"></script>
+    <link rel="icon" href="../img/logo_shadow.png">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Libre+Baskerville" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script>
+$(document).ready(function() {
+  $('#previous').on('click', async function(){
+    // Change to the previous image
+    $('#im_' + currentImage).stop().fadeOut(600);
+    decreaseImage();
+    console.log(currentImage);
+    await sleep(599);
+    $('#im_' + currentImage).stop().fadeIn(600);
+  }); 
+$('#next').on('click', async function(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  $('#im_' + currentImage).stop().fadeOut(600, function() {
+    increaseImage();
+    console.log(currentImage);
+    $('#im_' + currentImage).stop().fadeIn(600);
+  });
+});
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  var currentImage = 1;
+  var totalImages = 3;
+
+  function increaseImage() {
+    /* Increase currentImage by 1.
+    * Resets to 1 if larger than totalImages
+    */
+    ++currentImage;
+    if(currentImage > totalImages) {
+      currentImage = 1;
+    }
+  }
+  function decreaseImage() {
+    /* Decrease currentImage by 1.
+    * Resets to totalImages if smaller than 1
+    */
+    --currentImage;
+    if(currentImage < 1) {
+      currentImage = totalImages;
+    }
+  }
+  window.setInterval(function() {
+    $('#next').click();
+  }, 5000);
+});
+  </script>
+    
+<body>
+  <div class="hidden">
+	<script type="text/javascript">
+			var images = new Array()
+			function preload() {
+				for (i = 0; i < preload.arguments.length; i++) {
+					images[i] = new Image()
+					images[i].src = preload.arguments[i]
+				}
+			}
+			preload(
+				"https://www.utahrealestate.com/site/img/common/marquee-05.jpg",
+				"https://www.woodsidehomes.com/images/Slideshow/McIntosh1.jpg",
+				"http://buildwithbrighton.com/wp-content/uploads/2017/06/Parade-Home.jpg"
+			)
+		//--><!]]>
+	</script>
+</div>
+    <header>
+        <a href="../index.html"><img src="../img/logo[2097].png" title="Positive Grade Home Inspections LLC Logo" alt="Positive Grade Home Inspections LLC" id="logo"></a>
+        <div class="header-right">
+        <a href="../index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a class="active" href="about.html">About</a>
+        <a href="inspections.html">Services</a>
+        <a href="getInspection.html" id="inspection">Get An Inspection</a>
+    </header>
+    
+    
+    <div class="showContainer">
+  <!-- Full-width images with number and caption text -->
+        <div class="imageContainer" id="im_1">
+            <img src="https://www.utahrealestate.com/site/img/common/marquee-05.jpg" class="imge">
+        </div>
+
+        <div class="imageContainer " id="im_2">
+            <img src="https://www.woodsidehomes.com/images/Slideshow/McIntosh1.jpg" class="imge">
+        </div>
+
+        <div class="imageContainer" id="im_3">
+            <img src="http://buildwithbrighton.com/wp-content/uploads/2017/06/Parade-Home.jpg" class="imge">
+        </div>
+        <div id="border"></div>
+  <!-- Next and previous buttons -->
+        <div class="navButton" id="previous">&#10094;</div>
+        <div class="navButton" id="next">&#10095;</div>
+    </div>
+    <br>
+
+<!-- The dots/circles -->
+    <br><br>
+    <div id="someText">
+      <h1>Protecting Your Peace of Mind</h1>
+         <p>Positive Grade Home Inspections LLC is located in Utah and provides Salt Lake and Utah County with comprehensive 
+         home inspections to ensure a simple transaction, whether you are seeking to buy or sell your property. Our home inspection 
+         company offers a range of services that include the following:</p>
+         <ul>
+             <li>Flexible Scheduling</li>
+             <li>Home Maintenance Inspections</li>
+             <li>Property Listing Inspections (Buy or Seller Inspections)</li>
+             <li>Radon Testing</li>
+             <li>New Construction Inspection</li>
+         </ul>
+         <p>A typical inspection will be about 2-4 hours, depending on the size of the home or property. As always, you are welcome 
+         to join the inspection and ask any questions you might have along the way! After the initial inspection, we will provide you 
+         with an easy-to-read detailed report with all of our notes and what you need to keep an eye out for on the property or in the 
+         home, with details on:</p>
+         <ul>
+             <li>The condition of every major component, from the roof to the basement</li>
+             <li>Major and minor deficiencies</li>
+             <li>Any major expenditures necessary</li>
+             <li>Helpful home preservation tips</li>
+             <li>Safety concerns</li>
+             <li>And much more!</li>
+         </ul>
+         <p>We take pride in our work, striving for the most accurate and thorough inspections in north central Utah. To request any of
+         our services and to set up an appointment with us, give Positive Grade Home Inspections LLC a call today!</p>
+    </div>
+    
+  <footer>
+    <div>
+      <p>Positive Grade Home Inspections LLC | 1112 W. 300 S, Lehi, UT 84043  | 801-592-8517 | positivegrade@gmail.com</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+

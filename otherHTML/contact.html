@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Positive Grade Home Inspections LLC</title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+    <script type="text/javascript" src="../client.js"></script>
+    <link rel="icon" href="../img/logo_shadow.png">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Libre+Baskerville" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    
+    <script>
+    $(document).ready(function() {
+    	$('#contact_name').on('input', function() {
+	        var input=$(this);
+	        var is_name=input.val();
+	        if(is_name){input.removeClass("invalid").addClass("valid");}
+	        else{input.removeClass("valid").addClass("invalid");}
+        });
+        
+        
+        $('#contact_phone').on('input', function() {
+	        var input=$(this);
+	        var re = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
+	        var is_number=re.test(input.val());
+	        if(is_number){input.removeClass("invalid").addClass("valid");}
+	        else{input.removeClass("valid").addClass("invalid");}
+        });
+        
+        
+        $('#contact_email').on('input', function() {
+	        var input=$(this);
+	        var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+	        var is_email=re.test(input.val());
+	        if (is_email) {
+	            input.removeClass("invalid").addClass("valid");
+	        }
+	        else {
+	            input.removeClass("valid").addClass("invalid");
+	        }
+        });
+        
+        
+        
+        $("#contact_submit button").click(function(event){
+	        var form_data=$("#contact").serializeArray();
+	        var error_free=true;
+	        for (var input in form_data){
+		        var element=$("#contact_"+form_data[input]['name']);
+		        var valid=element.hasClass("valid");
+		        var error_element=$("span", element.parent());
+		        if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+		        else{error_element.removeClass("error_show").addClass("error");}
+	        }
+	        if (!error_free){
+		        event.preventDefault(); 
+	        }
+	        else{
+		        alert('No errors: Form will be submitted');
+    	    }
+        });
+    });
+    </script>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html"><img src="../img/logo[2097].png" title="Positive Grade Home Inspections LLC Logo" alt="Positive Grade Home Inspections LLC" id="logo"></a>
+        <div class="header-right">
+        <a href="../index.html">Home</a>
+        <a class="active" href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="inspections.html">Services</a>
+        <a href="getInspection.html" id="inspection">Get An Inspection</a>
+    </header>
+    
+    <div id="someText">
+        
+        <h1>Contact Us Today!</h1>
+        
+        <form method="post" action="contact.php">
+            <div>
+            <label>Name:</label>
+            <input id="contact_name" name="sender">
+            <span class="error">This field is required</span>
+            </div>
+            
+            <div>
+            <label>Phone Number:</label>
+            <input id="contact_phone" type="tel" name="senderNumber">
+            <span class="error">Please Enter a Valid Phone Number: XXX-XXX-XXXX</span>
+            </div>
+            
+            <div>
+            <label>Email address:</label>
+            <input id="contact_email" type="email" name="senderEmail">
+            <span class="error">Please Enter a Valid Email Address</span>
+            </div>
+    
+            <label>What Services Interest You?</label>
+                <select name="services" value="services">
+                  <option name="homeMaintenance" value="home-maintenance-inspections">Home Maintenance Inspections</option>
+                  <option name="propertyListing" value="property-listing-inspections">Property Listing Inspections (Buyer or Seller Inspections)</option>
+                  <option name="radonTesting" value="radon-testing">Radon Testing</option>
+                  <option name="newConstruction" value="new-construction-inspection">New Construction Inspections</option>
+                </select>
+    
+            <input id="contact-submit" type="submit" name="submit">
+        </form>
+    </div>
+    
+  <footer style="position: absolute; height: 7%;">
+    <div>
+      <p>Positive Grade Home Inspections LLC | 1112 W. 300 S, Lehi, UT 84043  | 801-592-8517 | positivegrade@gmail.com</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
