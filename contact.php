@@ -20,7 +20,7 @@ if($_POST["submit"]) {
     mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
 
     /* Redirect browser */
-    header("Location: ./thank.html");
+    header("Location: otherHTML/thank.html");
  
     /* Make sure that code below does not get executed when we redirect. */
     exit;   

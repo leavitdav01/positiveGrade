@@ -1,0 +1,28 @@
+#side {
+    visibility: hidden;
+    position:absolute;
+    top: 0;
+    /*top: 3em;
+    right: 0em;*/
+}
+
+#notSide {
+    visibility: visible;
+    position: absolute;
+    top:7em;
+    right:0;
+    background-color: rgb(242, 242, 242);
+    background-color: rgba(242, 242, 242, .93);
+    border-radius: 20px;
+    padding: 0em 1.5em 1.5em 1.5em;
+    transition: all .3s ease;
+}
+
+/*#sideReady {
+    right: 0;
+    top: 3em;
+    position: absolute;
+}
+
+#sideNotReady {
+}*/

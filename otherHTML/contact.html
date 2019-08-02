@@ -3,12 +3,13 @@
 <head>
 	<title>Positive Grade Home Inspections LLC</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" href="getInspection.css" type="text/css" />
     <script type="text/javascript" src="../client.js"></script>
     <link rel="icon" href="../img/logo_shadow.png">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Libre+Baskerville" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Montserrat&display=swap" rel="stylesheet">
     <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  integrity="sha256-FgpCb/KJQlLNfOu93ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
     
     <script>
@@ -20,7 +21,6 @@
 	        else{input.removeClass("valid").addClass("invalid");}
         });
         
-        
         $('#contact_phone').on('input', function() {
 	        var input=$(this);
 	        var re = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
@@ -28,7 +28,6 @@
 	        if(is_number){input.removeClass("invalid").addClass("valid");}
 	        else{input.removeClass("valid").addClass("invalid");}
         });
-        
         
         $('#contact_email').on('input', function() {
 	        var input=$(this);
@@ -41,8 +40,6 @@
 	            input.removeClass("valid").addClass("invalid");
 	        }
         });
-        
-        
         
         $("#contact_submit button").click(function(event){
 	        var form_data=$("#contact").serializeArray();
@@ -69,21 +66,73 @@
     <header>
         <a href="../index.html"><img src="../img/logo[2097].png" title="Positive Grade Home Inspections LLC Logo" alt="Positive Grade Home Inspections LLC" id="logo"></a>
         <div class="header-right">
-        <a href="../index.html">Home</a>
-        <a class="active" href="contact.html">Contact</a>
-        <a href="about.html">About</a>
-        <a href="inspections.html">Services</a>
-        <a href="getInspection.html" id="inspection">Get An Inspection</a>
+            <a href="../index.html">Home</a>
+            <a class="active" href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+            <a href="inspections.html">Services</a>
+            <a onclick="openSide()" id="inspection">Request a Quote</a>
+        </div>
     </header>
     
-    <div id="someText">
+    <div class="bodyMain">
         
         <h1>Contact Us Today!</h1>
+        <div class="row">
+            <div class="middle">
+                <form method="post" action="contact.php">
+                    <div>
+                    <label>Name:</label>
+                    <input type="text" id="contact_name" name="sender">
+                    <span class="error">This field is required</span>
+                    </div>
+                    
+                    <div>
+                    <label>Phone Number:</label>
+                    <input id="contact_phone" type="tel" name="senderNumber">
+                    <span class="error">Please Enter a Valid Phone Number: XXX-XXX-XXXX</span>
+                    </div>
+            
+                    <div>
+                    <label>Email address:</label>
+                    <input id="contact_email" type="email" name="senderEmail">
+                    <span class="error">Please Enter a Valid Email Address</span>
+                    </div>
+                
+                    <label>What Can We Help You With?</label>
+                        <select name="services" value="services">
+                          <option name="homeMaintenance" value="home-maintenance-inspections">Home Maintenance Inspections</option>
+                          <option name="propertyListing" value="property-listing-inspections">Property Listing Inspections (Buyer or Seller Inspections)</option>
+                          <option name="radonTesting" value="radon-testing">Radon Testing</option>
+                          <option name="newConstruction" value="new-construction-inspection">New Construction Inspections</option>
+                          <option name="sprinklerMaintenance" value="sprinkler-maintenance">Sprinklers</option>
+                        </select>
+                    
+                    <label for="first">What Would You Like Us to Know?</label>
+                    <textarea id="contact_message" name="message" style="height:190px"></textarea>
+            
+                    <input id="contact-submit" type="submit" name="submit">
+                </form>
+            </div>
+            <div class="rightC">
+                <img src="../img/DavidLeavittImage.jpg" id="fillSide"></img>
+            </div>
+        </div>
+    </div>
+    
+  <footer>
+    <div>
+      <p>Positive Grade Home Inspections LLC | 1112 W. 300 S, Lehi, UT 84043  | 801-592-8517 | positivegrade@gmail.com</p>
+      <h6><a href="http://18.217.32.197" style="color: black">Created by David Leavitt</a></h6>
+    </div>
+  </footer>
+  
+  <div id="side"><h4 style="text-align:right; cursor: pointer" onclick="closeSide()">close</h4>
+    <h1>Request a Quote</h1>
         
         <form method="post" action="contact.php">
             <div>
             <label>Name:</label>
-            <input id="contact_name" name="sender">
+            <input type="text" id="contact_name" name="sender">
             <span class="error">This field is required</span>
             </div>
             
@@ -99,23 +148,21 @@
             <span class="error">Please Enter a Valid Email Address</span>
             </div>
     
-            <label>What Services Interest You?</label>
+            <label>What Can We Help You With?</label>
                 <select name="services" value="services">
                   <option name="homeMaintenance" value="home-maintenance-inspections">Home Maintenance Inspections</option>
                   <option name="propertyListing" value="property-listing-inspections">Property Listing Inspections (Buyer or Seller Inspections)</option>
                   <option name="radonTesting" value="radon-testing">Radon Testing</option>
                   <option name="newConstruction" value="new-construction-inspection">New Construction Inspections</option>
+                  <option name="sprinklerMaintenance" value="sprinkler-maintenance">Sprinklers</option>
                 </select>
+                
+            <label for="first">What Would You Like Us to Know?</label>
+            <textarea id="contact_message" name="message" style="height:190px"></textarea>
     
             <input id="contact-submit" type="submit" name="submit">
         </form>
     </div>
-    
-  <footer style="position: absolute; height: 7%;">
-    <div>
-      <p>Positive Grade Home Inspections LLC | 1112 W. 300 S, Lehi, UT 84043  | 801-592-8517 | positivegrade@gmail.com</p>
-    </div>
-  </footer>
 
 </body>
 </html>

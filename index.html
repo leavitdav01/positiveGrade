@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 	<title>Positive Grade Home Inspections LLC</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
 	<link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="client.js"></script>
-    <link rel="icon" href="img/logo_shadow.png">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Libre+Baskerville" rel="stylesheet">
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/171523e043.js"></script>
+	<link rel="stylesheet" type="text/css" href="otherHTML/getInspection.css">
+  <script type="text/javascript" src="client.js"></script>
+  <link rel="icon" href="img/logo_shadow.png">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Montserrat&display=swap" rel="stylesheet">
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+  </script>
   <script>
+
 $(document).ready(function() {
   $('#previous').on('click', async function(){
     // Change to the previous image
@@ -82,11 +90,15 @@ $(document).ready(function() {
     <header>
         <a href="index.html"><img src="img/logo[2097].png" title="Positive Grade Home Inspections LLC Logo" alt="Positive Grade Home Inspections LLC" id="logo"></a>
         <div class="header-right">
-        <a class="active" href="index.html">Home</a>
-        <a href="otherHTML/contact.html">Contact</a>
-        <a href="otherHTML/about.html">About</a>
-        <a href="otherHTML/inspections.html">Services</a>
-        <a href="otherHTML/getInspection.html" id="inspection">Get An Inspection</a></div>
+          <a class="active" href="index.html">Home</a>
+          <a href="otherHTML/contact.html">Contact</a>
+          <a href="otherHTML/about.html">About</a>
+          <a href="otherHTML/inspections.html">Services</a>
+          <a onclick="openSide()" id="inspection">Request a Quote</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="showMenu()">
+          <img src="icons/menu-options.png" alt="menu-bar" class="menu"></img>
+        </a>
     </header>
     
     
@@ -150,31 +162,83 @@ $(document).ready(function() {
          
       </div>
       <div class="right">
-        <h2>Reviews</h2>
-        <div id="google-reviews"></div>
+        <div id="reviews">
+          <div class="reviewer">
+            <h1>5 stars on <a href="https://www.homeadvisor.com/rated.PositiveGradeHome.75909804.html" target="_blank"><img src="https://cdn1.homeadvisor.com/images/consumer/cobranding/HA_grouped_color.svg" title="Home Advisor Logo" alt="Home Advisor"></a></h1>
+          </div>
+          <div class="reviewer">
+            <h2>Bradley L. - Lehi, Ut</h2>
+            <p style="font-size: 2em; text-align: left;">"He was fast 
+              and efficient. I do not know a whole lot of information and 
+              he was willing to answer my questions in detail that would help me understand 
+              on my level. This helped me feel very comfortable. If there was something 
+              that was out of the ordinary then he would inform me of possibilities that 
+              could be the reason and then always provided different ways to fix the 
+              situation or improve it."
+            </p>
+          </div> <br>
+          <div class="reviewer">
+            <h2>James C. - Sandy, Ut</h2>
+            <p style="font-size: 2em; text-align:left">"Showed up when 
+              he said he would. Quality work. Stayed within the quote he provided. 
+              I have already recommended him to a friend and will hire again."
+            </p>
+          </div>
+        </div>
 
-<link rel="stylesheet" href="https://cdn.rawgit.com/stevenmonson/googleReviews/master/google-places.css">
-<script src="https://cdn.rawgit.com/stevenmonson/googleReviews/6e8f0d79/google-places.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDeivU57j-macv2fXXgbhKGM6cqMLmnAFI&signed_in=true&libraries=places"></script>
-
-<script>
-jQuery(document).ready(function( $ ) {
-   $("#google-reviews").googlePlaces({
-        placeId: 'ChIJVVVJGHp_TYcRLGrAQ-7QDY0' //Find placeID @: https://developers.google.com/places/place-id
-      , render: ['reviews']
-      , min_rating: 4
-      , max_rows:4
-   });
-});
-</script>
       </div>
     </div>
 
   <footer>
     <div>
       <p id="bottom">Contact Us Today!</p><p>Positive Grade Home Inspections LLC | 1112 W. 300 S, Lehi, UT 84043  | 801-592-8517 | positivegrade@gmail.com</p>
+      <h5><a href="http://18.217.32.197" style="color: black">Created by David Leavitt</a></h5>
+      <h6 style="color:black">Icons made by <a href="https://www.flaticon.com/authors/anton-saputro" title="Anton Saputro">Anton Saputro</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></h6>
     </div>
   </footer>
+  
+  
+<div id="side">
+<h4 style="text-align:right; cursor: pointer" onclick="closeSide()">close</h4>
+<h1>Request a Quote</h1>
+        
+        <form method="post" action="contact.php">
+            <div>
+            <label>Name:</label>
+            <input type="text" id="contact_name" name="sender">
+            <span class="error">This field is required</span>
+            </div>
+            
+            <div>
+            <label>Phone Number:</label>
+            <input id="contact_phone" type="tel" name="senderNumber">
+            <span class="error">Please Enter a Valid Phone Number: XXX-XXX-XXXX</span>
+            </div>
+            
+            <div>
+            <label>Email address:</label>
+            <input id="contact_email" type="email" name="senderEmail">
+            <span class="error">Please Enter a Valid Email Address</span>
+            </div>
+    
+            <label>What Can We Help You With?</label>
+                <select name="services" value="services">
+                  <option name="homeMaintenance" value="home-maintenance-inspections">Home Maintenance Inspections</option>
+                  <option name="propertyListing" value="property-listing-inspections">Property Listing Inspections (Buyer or Seller Inspections)</option>
+                  <option name="radonTesting" value="radon-testing">Radon Testing</option>
+                  <option name="newConstruction" value="new-construction-inspection">New Construction Inspections</option>
+                  <option name="sprinklerMaintenance" value="sprinkler-maintenance">Sprinklers</option>
+                </select>
+                
+            <label for="first">What Would You Like Us to Know?</label>
+            <textarea id="contact_message" name="message" style="height:190px"></textarea>
+    
+            <input id="contact-submit" type="submit" name="submit">
+        </form>
+        
+</div>
+
+
 </body>
 </html>
 

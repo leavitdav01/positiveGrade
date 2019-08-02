@@ -3,9 +3,10 @@
 <head>
 	<title>Positive Grade Home Inspections LLC</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" href="getInspection.css" type="text/css" />
     <script type="text/javascript" src="../client.js"></script>
     <link rel="icon" href="../img/logo_shadow.png">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Libre+Baskerville" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Montserrat&display=swap" rel="stylesheet">
     <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -19,38 +20,49 @@
         <a href="contact.html">Contact</a>
         <a href="about.html">About</a>
         <a class="active" href="inspections.html">Services</a>
-        <a href="getInspection.html" id="inspection">Get An Inspection</a>
+        <a onclick="openSide()" id="inspection">Request a Quote</a>
     </header>
-    
-    
-    <br><br>
-    <div id="someText">
+  
+    <div class="bodyMain">
       <h1>Services</h1>
         <p>Our home inspection company offers a range of services that include the following:</p>
  
         <div class="grid-container">
           <div class="grid-item"><h3>Flexible Scheduling</h3><br>
               <img src="../img/calendar.png" class="gridImage" alt="Positive Grade Calendar">
-              <p>Our flexable schedule allows us to work around a time that's right for you.</p>
+              <p>
+                Bacon ipsum dolor amet in cow pork chop, ball tip ad commodo shoulder tongue brisket proident hamburger voluptate dolore landjaeger spare ribs. Sausage ea pancetta swine, in boudin prosciutto meatloaf turducken hamburger laboris qui rump et. Meatloaf boudin frankfurter culpa ea. Sint est pork chop aliqua consequat t-bone.
+              </p>
           </div>
+          
           <div class="grid-item"><h3>Home Maintenance Inspections</h3><br>
               <img src="../img/homeMaintenance.jpg" class="gridImage" alt="Positive Grade Home Maintenance Inspection">
+              <p>
+                Deserunt id ut, ground round occaecat tempor nostrud. Doner elit beef, pancetta short loin ground round esse ullamco id sint ut ham hock beef ribs. In elit do occaecat, prosciutto ground round fatback spare ribs short loin kevin. Occaecat swine flank ribeye, labore est tri-tip pariatur sausage chicken qui consectetur. 
+              </p>
           </div>
+          
           <div class="grid-item"><h3>Property Listing Inspections (Buy or Seller Inspections)</h3>
               <img src="../img/propertyListingInspections.jpg" class="gridImage" alt="Positive Grade Home Maintenance Inspection">
-              <p>If you have any questions or issues with property listings, we offer property listing inspections for a full report on any home you are interested in buying or selling. We will inspect each area of the listing, and provide you with the proper details regarding repairs, maintenance work, and more.</p>
+              <p>
+Pastrami consequat ut shoulder consectetur prosciutto in qui nisi eu. Kevin jowl duis porchetta buffalo. Ut buffalo porchetta dolor voluptate cow drumstick fugiat. Eu tail shankle chuck officia, pork belly anim excepteur est spare ribs ullamco bacon ut ipsum.              </p>
           </div>
+          
           <div class="grid-item"><h3>Radon Testing</h3>
               <img src="../img/radonTesting.jpg" class="gridImage" alt="Positive Grade Home Maintenance Inspection">
-              <p>Home Inspections LLC offers certified radon testing to ensure you and your family are safe from the radioactive, natural gas. This is highly recommended if you are moving into a new home.</p>
+              <p>
+Sirloin boudin leberkas pastrami fatback, veniam nisi. Tempor cupidatat reprehenderit in dolor cillum id anim, meatloaf chuck velit qui. Ea velit beef deserunt nostrud. Proident shankle quis non aliquip capicola occaecat pork belly leberkas. Pork chop cillum nisi ut quis boudin laborum tail bresaola rump kielbasa jerky.              
+              </p>
           </div>
           <div class="grid-item"><h3>New Construction Inspection</h3>
               <img src="../img/servicesNewConstruction.jpg" class="gridImage" alt="Positive Grade Home Maintenance Inspection">
-              <p>If you are in the process of building your home, it is crucial you make time for comprehensive inspections to ensure everything is on the right track. The inspection should be scheduled a day or two before your final walk through with the Builder. This timetable will ensure that most, if not all, last minute items have been completed prior to the inspection.</p>
+              <p>
+Spare ribs incididunt dolor ut swine ullamco cupim. Proident in eiusmod, id turkey incididunt elit tongue. Sausage tenderloin mollit bresaola cupim cillum shoulder sint kevin duis venison consectetur jerky rump. Pancetta tongue deserunt pork duis aute sirloin sed. Jowl t-bone bresaola irure cupidatat laboris dolor turkey. Exercitation chuck nisi consectetur ham hock.              </p>
           </div>
           <div class="grid-item"><h3>Sprinklers</h3>
               <img src="../img/sprinkler.jpg" class="gridImage" alt="Positive Grade Home Maintenance Inspection">
-              <p>We offer sprinkler system inspections for an additional fee during the months of April-October (or when the sprinklers are on and it isn't too cold).We turn on each sprinkler zone manually using the control panel and then check for leaks, sprinklers not functioning properly, and sprinklers that may be spraying the house or not covering areas of the lawn.</p>
+              <p>
+Anim culpa adipisicing strip steak ut. Non dolore t-bone shank, short loin beef ribs commodo landjaeger proident veniam beef voluptate pancetta. Burgdoggen irure beef ribs tenderloin. Exercitation eu fatback laboris. Ut laboris kielbasa, velit officia commodo fatback prosciutto pig irure sed ea. Ham dolore tempor, porchetta boudin sirloin sausage quis esse veniam.              </p>
           </div>
         </div>
          <p>A typical inspection will be about 2-4 hours, depending on the size of the home or property. As always, you are welcome 
@@ -72,8 +84,47 @@
   <footer>
     <div>
       <p>Positive Grade Home Inspections LLC | 1112 W. 300 S, Lehi, UT 84043  | 801-592-8517 | positivegrade@gmail.com</p>
+      <h6><a href="http://18.217.32.197" style="color: black">Created by David Leavitt</a></h6>
     </div>
   </footer>
+  
+<div id="side"><h4 style="text-align:right; cursor: pointer" onclick="closeSide()">close</h4>
+    <h1>Request a Quote</h1>
+        
+        <form method="post" action="contact.php">
+            <div>
+            <label>Name:</label>
+            <input type="text" id="contact_name" name="sender">
+            <span class="error">This field is required</span>
+            </div>
+            
+            <div>
+            <label>Phone Number:</label>
+            <input id="contact_phone" type="tel" name="senderNumber">
+            <span class="error">Please Enter a Valid Phone Number: XXX-XXX-XXXX</span>
+            </div>
+            
+            <div>
+            <label>Email address:</label>
+            <input id="contact_email" type="email" name="senderEmail">
+            <span class="error">Please Enter a Valid Email Address</span>
+            </div>
+    
+            <label>What Can We Help You With?</label>
+                <select name="services" value="services">
+                  <option name="homeMaintenance" value="home-maintenance-inspections">Home Maintenance Inspections</option>
+                  <option name="propertyListing" value="property-listing-inspections">Property Listing Inspections (Buyer or Seller Inspections)</option>
+                  <option name="radonTesting" value="radon-testing">Radon Testing</option>
+                  <option name="newConstruction" value="new-construction-inspection">New Construction Inspections</option>
+                  <option name="sprinklerMaintenance" value="sprinkler-maintenance">Sprinklers</option>
+                </select>
+                
+            <label for="first">What Would You Like Us to Know?</label>
+            <textarea id="contact_message" name="message" style="height:190px"></textarea>
+    
+            <input id="contact-submit" type="submit" name="submit">
+        </form>
+    </div>
 
 </body>
 </html>

@@ -3,148 +3,82 @@
 <head>
 	<title>Positive Grade Home Inspections LLC</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
-    <script type="text/javascript" src="../client.js"></script>
-    <link rel="icon" href="../img/logo_shadow.png">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Libre+Baskerville" rel="stylesheet">
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script>
-$(document).ready(function() {
-  $('#previous').on('click', async function(){
-    // Change to the previous image
-    $('#im_' + currentImage).stop().fadeOut(600);
-    decreaseImage();
-    console.log(currentImage);
-    await sleep(599);
-    $('#im_' + currentImage).stop().fadeIn(600);
-  }); 
-$('#next').on('click', async function(event) {
-  event.preventDefault();
-  event.stopPropagation();
-
-  $('#im_' + currentImage).stop().fadeOut(600, function() {
-    increaseImage();
-    console.log(currentImage);
-    $('#im_' + currentImage).stop().fadeIn(600);
-  });
-});
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
-  var currentImage = 1;
-  var totalImages = 3;
-
-  function increaseImage() {
-    /* Increase currentImage by 1.
-    * Resets to 1 if larger than totalImages
-    */
-    ++currentImage;
-    if(currentImage > totalImages) {
-      currentImage = 1;
-    }
-  }
-  function decreaseImage() {
-    /* Decrease currentImage by 1.
-    * Resets to totalImages if smaller than 1
-    */
-    --currentImage;
-    if(currentImage < 1) {
-      currentImage = totalImages;
-    }
-  }
-  window.setInterval(function() {
-    $('#next').click();
-  }, 5000);
-});
-  </script>
+	<link rel="stylesheet" href="getInspection.css" type="text/css" />
+  <script type="text/javascript" src="../client.js"></script>
+  <link rel="icon" href="../img/logo_shadow.png">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Montserrat&display=swap" rel="stylesheet">
+</head>
     
 <body>
-  <div class="hidden">
-	<script type="text/javascript">
-			var images = new Array()
-			function preload() {
-				for (i = 0; i < preload.arguments.length; i++) {
-					images[i] = new Image()
-					images[i].src = preload.arguments[i]
-				}
-			}
-			preload(
-				"https://www.utahrealestate.com/site/img/common/marquee-05.jpg",
-				"https://www.woodsidehomes.com/images/Slideshow/McIntosh1.jpg",
-				"http://buildwithbrighton.com/wp-content/uploads/2017/06/Parade-Home.jpg"
-			)
-		//--><!]]>
-	</script>
-</div>
-    <header>
-        <a href="../index.html"><img src="../img/logo[2097].png" title="Positive Grade Home Inspections LLC Logo" alt="Positive Grade Home Inspections LLC" id="logo"></a>
-        <div class="header-right">
-        <a href="../index.html">Home</a>
-        <a href="contact.html">Contact</a>
-        <a class="active" href="about.html">About</a>
-        <a href="inspections.html">Services</a>
-        <a href="getInspection.html" id="inspection">Get An Inspection</a>
-    </header>
+  <header>
+    <a href="../index.html"><img src="../img/logo[2097].png" title="Positive Grade Home Inspections LLC Logo" alt="Positive Grade Home Inspections LLC" id="logo"></a>
+    <div class="header-right">
+    <a href="../index.html">Home</a>
+    <a href="contact.html">Contact</a>
+    <a class="active" href="about.html">About</a>
+    <a href="inspections.html">Services</a>
+    <a onclick="openSide()" id="inspection">Request a Quote</a>
+  </header>
     
-    
-    <div class="showContainer">
-  <!-- Full-width images with number and caption text -->
-        <div class="imageContainer" id="im_1">
-            <img src="https://www.utahrealestate.com/site/img/common/marquee-05.jpg" class="imge">
-        </div>
-
-        <div class="imageContainer " id="im_2">
-            <img src="https://www.woodsidehomes.com/images/Slideshow/McIntosh1.jpg" class="imge">
-        </div>
-
-        <div class="imageContainer" id="im_3">
-            <img src="http://buildwithbrighton.com/wp-content/uploads/2017/06/Parade-Home.jpg" class="imge">
-        </div>
-        <div id="border"></div>
-  <!-- Next and previous buttons -->
-        <div class="navButton" id="previous">&#10094;</div>
-        <div class="navButton" id="next">&#10095;</div>
-    </div>
-    <br>
-
-<!-- The dots/circles -->
-    <br><br>
-    <div id="someText">
-      <h1>Protecting Your Peace of Mind</h1>
-         <p>Positive Grade Home Inspections LLC is located in Utah and provides Salt Lake and Utah County with comprehensive 
-         home inspections to ensure a simple transaction, whether you are seeking to buy or sell your property. Our home inspection 
-         company offers a range of services that include the following:</p>
-         <ul>
-             <li>Flexible Scheduling</li>
-             <li>Home Maintenance Inspections</li>
-             <li>Property Listing Inspections (Buy or Seller Inspections)</li>
-             <li>Radon Testing</li>
-             <li>New Construction Inspection</li>
-         </ul>
-         <p>A typical inspection will be about 2-4 hours, depending on the size of the home or property. As always, you are welcome 
-         to join the inspection and ask any questions you might have along the way! After the initial inspection, we will provide you 
-         with an easy-to-read detailed report with all of our notes and what you need to keep an eye out for on the property or in the 
-         home, with details on:</p>
-         <ul>
-             <li>The condition of every major component, from the roof to the basement</li>
-             <li>Major and minor deficiencies</li>
-             <li>Any major expenditures necessary</li>
-             <li>Helpful home preservation tips</li>
-             <li>Safety concerns</li>
-             <li>And much more!</li>
-         </ul>
-         <p>We take pride in our work, striving for the most accurate and thorough inspections in north central Utah. To request any of
-         our services and to set up an appointment with us, give Positive Grade Home Inspections LLC a call today!</p>
+    <div class="bodyMain">
+      <h1>Our Family</h1>
+      <div class="row">
+        <img src="../img/filler.jpg" class="imageAbout"></img>
+        <img src="../img/filler2.jpg" class="imageAbout"></img>
+      </div>
+         <p style="margin: 2% 8% 2% 8%;">Sink me scuppers heave down Cat o'nine tails rum dead men tell no tales piracy broadside aye mizzen quarterdeck gangway aft loaded to the gunwalls killick. Bilge water to go on account provost grog blossom Shiver me timbers barque interloper line red ensign keel topmast piracy bilge hang the jib rigging. Fire ship schooner list pink lanyard jib pressgang keel rigging interloper Arr skysail yard wench chase guns.
+         </p>
+         <p style="margin: 2% 8% 2% 8%;">
+Gun tackle draught quarterdeck me capstan reef sails cackle fruit fire ship fire in the hole careen Chain Shot port Sink me gangplank. Wherry barkadeer reef sails scallywag Corsair chase guns strike colors bilged on her anchor Spanish Main bowsprit Pieces of Eight ye yawl come about Yellow Jack. Yawl carouser topgallant trysail Jack Ketch dance the hempen jig keel tender hempen halter prow run a shot across the bow boatswain lugger Plate Fleet spanker.         </p>
+         <p style="margin: 2% 8% 2% 8%;">
+Rigging ye reef scurvy tack mizzen gabion ahoy jib Sail ho salmagundi chase measured fer yer chains crack Jennys tea cup yardarm. Bilge booty hogshead yardarm rope's end weigh anchor Arr grog furl Pirate Round galleon brigantine ho gaff American Main. Smartly aft parrel Jack Tar red ensign list pink heave to pirate prow flogging walk the plank Davy Jones' Locker dance the hempen jig yawl.         </p>
     </div>
     
   <footer>
     <div>
       <p>Positive Grade Home Inspections LLC | 1112 W. 300 S, Lehi, UT 84043  | 801-592-8517 | positivegrade@gmail.com</p>
+      <h6><a href="http://18.217.32.197" style="color: black">Created by David Leavitt</a></h6>
     </div>
   </footer>
+  
+<div id="side"><h4 style="text-align:right; cursor: pointer" onclick="closeSide()">close</h4>
+<h1>Request a Quote</h1>
+        
+        <form method="post" action="contact.php">
+            <div>
+            <label>Name:</label>
+            <input type="text" id="contact_name" name="sender">
+            <span class="error">This field is required</span>
+            </div>
+            
+            <div>
+            <label>Phone Number:</label>
+            <input id="contact_phone" type="tel" name="senderNumber">
+            <span class="error">Please Enter a Valid Phone Number: XXX-XXX-XXXX</span>
+            </div>
+            
+            <div>
+            <label>Email address:</label>
+            <input id="contact_email" type="email" name="senderEmail">
+            <span class="error">Please Enter a Valid Email Address</span>
+            </div>
+    
+            <label>What Can We Help You With?</label>
+                <select name="services" value="services">
+                  <option name="homeMaintenance" value="home-maintenance-inspections">Home Maintenance Inspections</option>
+                  <option name="propertyListing" value="property-listing-inspections">Property Listing Inspections (Buyer or Seller Inspections)</option>
+                  <option name="radonTesting" value="radon-testing">Radon Testing</option>
+                  <option name="newConstruction" value="new-construction-inspection">New Construction Inspections</option>
+                  <option name="sprinklerMaintenance" value="sprinkler-maintenance">Sprinklers</option>
+                </select>
+                
+            <label for="first">What Would You Like Us to Know?</label>
+            <textarea id="contact_message" name="message" style="height:190px"></textarea>
+    
+            <input id="contact-submit" type="submit" name="submit">
+        </form>
+        
+</div>
 
 </body>
 </html>
